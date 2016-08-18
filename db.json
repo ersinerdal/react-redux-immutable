@@ -1,0 +1,35 @@
+{
+  "user":
+    {
+      "id": 1,
+      "name": "Brad",
+      "surname": "Pitt",
+      "token": "tokentokentokentokentokentokentoken"
+    },
+  "users": [
+    {
+      "id": 1,
+      "name": "Brad",
+      "surname": "ahmet"
+    },
+    {
+      "id": 2,
+      "name": "Kevin",
+      "surname": "mehmet"
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "name": "adas",
+      "surname": "ahmet",
+      "cardNumber": "5684236874512589"
+    },
+    {
+      "id": 2,
+      "name": "asdsad",
+      "surname": "mehmet",
+      "cardNumber": "9868153146541651"
+    }
+  ]
+}
