@@ -16,7 +16,7 @@ export default function () {
 
         case 'production':
             return Object.assign(config,{
-                'api': 'http://mateli.com'
+                'api': 'http://production.adress.com'
             });
         default:
             return config;

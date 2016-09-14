@@ -1,4 +1,4 @@
 
 export function setDocumentTitle(title) {
-    document.title = `${title} | Mateli`;
+    document.title = `${title} | react - redux - immutable`;
 }

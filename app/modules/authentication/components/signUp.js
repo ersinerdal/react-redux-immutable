@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { reduxForm } from 'redux-form';
+import {connect} from 'react-redux'
 
 import style from '../styles2.css';
 
@@ -12,21 +12,20 @@ class SignUp extends Component {
     console.log(this.props);
   }
   render() {
-    const {fields: {firstName, lastName, email},resetForm, submitting} = this.props;
+    const {resetForm, submitting} = this.props;
     return (
       <form onSubmit={::this.handleSubmit}>
-        {this.props.fields.firstName.value}
         <div>
           <label>First Name</label>
-          <input type="text" placeholder="First Name" {...firstName}/>
+          <input type="text" placeholder="First Name" />
         </div>
         <div>
           <label>Last Name</label>
-          <input type="text" placeholder="Last Name" {...lastName}/>
+          <input type="text" placeholder="Last Name"/>
         </div>
         <div>
           <label>Email</label>
-          <input type="email" placeholder="Email" {...email}/>
+          <input type="email" placeholder="Email"/>
         </div>
         <button type="submit" disabled={submitting}>Submit</button>
         <button type="button" disabled={submitting} onClick={resetForm}>
@@ -38,14 +37,14 @@ class SignUp extends Component {
 }
 
 SignUp.propTypes = {
-  fields: React.PropTypes.object.isRequired,
   submitting: React.PropTypes.bool.isRequired
 };
 SignUp.defaultProps ={
   submitting:false
 };
-export default reduxForm({
-  form: 'contact',
-  fields: ['firstName', 'lastName', 'email'],
-  getFormState: (state, reduxMountPoint) => state.get(reduxMountPoint).toJS()
-})(SignUp);
+
+function mapStateToProps(state) {
+  const {SignUp} =  state.toJS();
+  return SignUp;
+}
+export default connect(mapStateToProps)(SignUp);
