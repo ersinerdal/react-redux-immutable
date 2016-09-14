@@ -12,8 +12,6 @@ class Header extends React.Component {
                     |
                     <Link to="/credit">Credit</Link>
                     |
-                    <Link to="/customer">Customer</Link>
-                    |
                     <Link to="/account">Account</Link>
                     ----
                     <Link to="/sign_out">Sign Out</Link>
