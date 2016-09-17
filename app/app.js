@@ -2,29 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute} from 'react-router';
-import {store, history} from './configureStore'
+import {store} from './configureStore'
+import { browserHistory } from 'react-router'
 
 // Modules
-import authorizedLayout from 'modules/shared/containers/authorizedLayout';
-import authContainer from 'modules/authentication/authContainer';
-import DashboardContainer from 'modules/dashboard/dashboardContainer';
-import CardContainer from 'modules/card/cardContainer';
+import MainLayout from 'modules/main/MainLayout';
+import AuthLayout from 'modules/auth/AuthLayout';
+import DashboardLayout from 'modules/dashboard/DashboardLayout';
+import CardLayout from 'modules/card/CardLayout';
 
 // Components
-import SingIn from 'modules/authentication/containers/signInContainer';
-import SingUp from 'modules/authentication/components/signUp';
+import SingIn from 'modules/auth/components/SignIn';
+import SingUp from 'modules/auth/components/SignUp';
 
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router history={history}>
-      <Route component={authContainer}>
+    <Router history={browserHistory}>
+      <Route component={AuthLayout}>
         <Route path="/sign_in" component={SingIn}/>
         <Route path="/sign_up" component={SingUp}/>
       </Route>
-      <Route path="/" component={authorizedLayout}>
-        <IndexRoute component={DashboardContainer}/>
-        <Route path="/card" component={CardContainer}/>
+      <Route path="/" component={MainLayout}>
+        <IndexRoute component={DashboardLayout}/>
+        <Route path="/card" component={CardLayout}/>
       </Route>
     </Router>
   </Provider>

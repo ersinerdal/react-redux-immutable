@@ -1,4 +1,4 @@
-import * as actions from '../../app/modules/authentication/actions';
+import * as actions from '../../app/modules/auth/components/SignIn/actions';
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import Config from '../../app/config'

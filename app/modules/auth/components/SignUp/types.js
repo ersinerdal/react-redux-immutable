@@ -1,0 +1,3 @@
+export const REQUEST_SIGN_UP = 'REQUEST_SIGN_UP';
+export const RECEIVE_SIGN_UP = 'RECEIVE_SIGN_UP';
+export const ERROR_SIGN_UP = 'ERROR_SIGN_UP';
