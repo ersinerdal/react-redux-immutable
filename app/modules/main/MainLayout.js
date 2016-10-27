@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from 'modules/main/components/Header';
-import Footer from 'modules/main/components/Footer';
+import PageHeader from 'modules/main/components/Header';
+import PageFooter from 'modules/main/components/Footer';
 import axios from 'axios';
 import { browserHistory } from 'react-router'
 import {connect } from 'react-redux'
@@ -45,11 +45,11 @@ class MainLayout extends React.Component {
   render() {
     let component = !this.isSignedIn ? false : (
           <div className="app">
-              <Header />
+              <PageHeader />
               <main>
                   {this.props.children}
               </main>
-              <Footer />
+              <PageFooter />
           </div>
       );
     return component;

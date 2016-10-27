@@ -1,13 +1,17 @@
 import React from 'react';
+import {Navbar, NavItem, Row} from 'react-materialize';
 
 class AuthLayout extends React.Component {
   render() {
         return (
-            <div className="app">
+            <Row>
+              <Navbar brand='logo' right className='grey darken-4'>
+                <NavItem href='/get-started'>Getting started</NavItem>
+              </Navbar>
                 <main>
                     {this.props.children}
                 </main>
-            </div>
+            </Row>
         )
     }
 }

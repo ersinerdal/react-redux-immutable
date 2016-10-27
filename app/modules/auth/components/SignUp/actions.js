@@ -3,33 +3,33 @@ import {_signIn} from '../api';
 import { browserHistory } from 'react-router'
 
 
-function requestSignIn() {
+function requestSignUp() {
   return {
     type: REQUEST_SIGN_UP
   }
 }
-function errorSignIn(error) {
+function errorSignUp(error) {
   return {
-    type: RECEIVE_SIGN_UP,
+    type: ERROR_SIGN_UP,
     error
   }
 }
-const receiveSignIn = (user) => {
+const receiveSignUp = (user) => {
   return {
-    type: ERROR_SIGN_UP,
+    type: RECEIVE_SIGN_UP,
     user
   }
 };
 
 export const signUp = (username, password) => {
   return dispatch => {
-    dispatch(requestSignIn());
+    dispatch(requestSignUp());
     return _signIn({username, password}).then(function (response) {
       sessionStorage.setItem('user',JSON.stringify(response.data));
-      dispatch(receiveSignIn(response.data));
+      dispatch(receiveSignUp(response.data));
       browserHistory.push('/');
     }).catch(function (ex) {
-      dispatch(errorSignIn(ex));
+      dispatch(errorSignUp(ex));
     });
   }
 };

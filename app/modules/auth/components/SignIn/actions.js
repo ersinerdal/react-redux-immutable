@@ -1,6 +1,6 @@
 import {REQUEST_SIGN_IN,RECEIVE_SIGN_IN,ERROR_SIGN_IN} from './types';
 import {_signIn} from '../../api';
-import { browserHistory } from 'react-router'
+import {browserHistory} from 'react-router';
 
 function requestSignIn() {
   return {
@@ -23,6 +23,7 @@ const receiveSignIn = (user) => {
 export const signIn = (username, password) => {
   return dispatch => {
     dispatch(requestSignIn());
+
     return _signIn({username, password}).then(function (response) {
       sessionStorage.setItem('user',JSON.stringify(response.data));
       dispatch(receiveSignIn(response.data));
@@ -30,5 +31,7 @@ export const signIn = (username, password) => {
     }).catch(function (ex) {
       dispatch(errorSignIn(ex));
     });
+
+
   }
 };
