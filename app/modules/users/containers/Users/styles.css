@@ -1,0 +1,21 @@
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.users {
+    .left-nav{
+        float:left;
+        width:20%;
+    }
+    .user-list{
+        float:left;
+        width:80%;
+    }
+}

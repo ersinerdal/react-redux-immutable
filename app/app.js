@@ -8,7 +8,7 @@ import {store} from './configureStore'
 import MainLayout from 'modules/main/MainLayout';
 import AuthLayout from 'modules/auth/AuthLayout';
 import DashboardLayout from 'modules/dashboard/DashboardLayout';
-import CardLayout from 'modules/card/CardLayout';
+import UserLayout from 'modules/users/UserLayout';
 
 // Components
 import SingIn from 'modules/auth/components/SignIn';
@@ -24,7 +24,7 @@ ReactDOM.render((
       </Route>
       <Route path="/" component={MainLayout}>
         <IndexRoute component={DashboardLayout}/>
-        <Route path="/card" component={CardLayout}/>
+        <Route path="/users" component={UserLayout}/>
       </Route>
     </Router>
   </Provider>

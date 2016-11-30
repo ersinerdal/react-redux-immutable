@@ -28,7 +28,7 @@ class SignUp extends Component {
             </Row>
             <Row>
               <Col s={6}>
-                <Button className="waves-effect waves-light btn  deep-orange darken-4" type="submit" disabled={submitting}> Send <Icon right>send</Icon></Button>
+                <Button className="waves-effect waves-light btn" type="submit" disabled={submitting}> Send <Icon right>send</Icon></Button>
               </Col>
               <Col s={6} className="right-align">
                 <a href='/sign_in'>Sign In</a>

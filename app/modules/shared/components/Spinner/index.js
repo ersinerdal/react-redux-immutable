@@ -1,4 +1,5 @@
 import React from 'react';
+import {Preloader} from 'react-materialize'
 
 class Spinner extends React.Component{
     constructor(props){
@@ -6,7 +7,9 @@ class Spinner extends React.Component{
     }
     render() {
         return (
-            <div className='loading'>Loading&#8230;</div>
+            <div className='loading'>
+                <Preloader flashing/>
+            </div>
         )
     }
 };

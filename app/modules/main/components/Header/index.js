@@ -7,9 +7,9 @@ class PageHeader extends React.Component {
     return (
       <header>
         <Row>
-        <Navbar brand='logo' right className='grey darken-4'>
+        <Navbar brand='logo' right>
           <NavItem href='/'>Dashboard</NavItem>
-          <NavItem href='/card'>Card</NavItem>
+          <NavItem href='/users'>Users</NavItem>
           <NavItem href='#'><Icon>power_settings_new</Icon></NavItem>
         </Navbar>
         </Row>

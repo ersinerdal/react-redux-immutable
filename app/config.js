@@ -1,8 +1,13 @@
 export default function () {
     let config = {
         api: '',
-        signIn:'/user',
-        getCustomers:'/users'
+        auth: {
+            signIn : '/user'
+        },
+        users: {
+            userList : '/users',
+            usersMenu:'/usersMenu'
+        }
     };
     switch (process.env.NODE_ENV) {
         case 'development':

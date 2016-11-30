@@ -5,7 +5,7 @@ class AuthLayout extends React.Component {
   render() {
         return (
             <Row>
-              <Navbar brand='logo' right className='grey darken-4'>
+              <Navbar brand='logo' right>
                 <NavItem href='/get-started'>Getting started</NavItem>
               </Navbar>
                 <main>
