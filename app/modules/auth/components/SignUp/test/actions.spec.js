@@ -1,12 +1,12 @@
 import * as actions from '../actions';
 
-describe('SignIn actions', () => {
+describe('SignUp actions', () => {
 
   afterEach(() => {
     mock.reset();
   });
 
-  it('should log the user in and get token', () => {
+  it('should Sign the user up and get token', () => {
 
     const store = mockStore();
     const expectedUser = {
@@ -16,9 +16,9 @@ describe('SignIn actions', () => {
       "token": "testtokentokentokentokentokentokentoken"
     };
     const expectedActions = [
-      {type: 'REQUEST_SIGN_IN'},
+      {type: 'REQUEST_SIGN_UP'},
       {
-        type: 'RECEIVE_SIGN_IN',
+        type: 'RECEIVE_SIGN_UP',
         user: {
           id: 1,
           name: 'username',
@@ -27,10 +27,9 @@ describe('SignIn actions', () => {
         }
       }];
 
+    mock.onGet(config.api + config.auth.signUp).reply(200, expectedUser);
 
-    mock.onGet(config.api + config.auth.signIn).reply(200, expectedUser);
-
-    return store.dispatch(actions.signIn('try', 'try'))
+    return store.dispatch(actions.signUp('try', 'try','try', 'try'))
       .then(() => {
         let actualActions = store.getActions();
         let actualUser = JSON.parse(sessionStorage.getItem("user"));

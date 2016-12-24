@@ -1,6 +1,6 @@
 import {REQUEST_SIGN_IN,RECEIVE_SIGN_IN,ERROR_SIGN_IN} from './types';
 import {_signIn} from '../../api';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 
 function requestSignIn() {
   return {

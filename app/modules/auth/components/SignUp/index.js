@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {Input, Button, Col,Row, Icon, Card} from 'react-materialize';
+import {signUp} from './actions';
 
 import style from './styles.css';
 
@@ -10,7 +11,9 @@ class SignUp extends Component {
   }
   handleSubmit(e){
     e.preventDefault();
-    console.log(this.props);
+    const {first_name, last_name, email, password} = this.refs;
+    const {dispatch} = this.props;
+    dispatch(signUp(first_name.value, last_name.value ,email.value , password.value));
   }
   render() {
     const {resetForm, submitting} = this.props;

@@ -1,12 +1,17 @@
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
 import chaiImmutable from 'chai-immutable';
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
+import Config from './config'
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import sinon from 'sinon';
+import * as router from 'react-router';
+
 
 chai.use(chaiImmutable);
 chai.use(sinonChai);
-
-global.expect = chai.expect;
-
 
 function storageMock() {
   var storage = {};
@@ -30,6 +35,14 @@ function storageMock() {
     }
   };
 }
-
+global.expect = chai.expect;
 global.sessionStorage  = storageMock();
 global.localStorage = storageMock();
+global.mockStore = configureMockStore([thunk]);
+global.config = new Config();
+global.mock = new MockAdapter(axios);
+
+router.browserHistory = { push: ()=>{} };
+const browserHistoryPushStub = sinon.stub(router.browserHistory, 'push', () => { });
+
+global.browserHistoryPushStub = browserHistoryPushStub;

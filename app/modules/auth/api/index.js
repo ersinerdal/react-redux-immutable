@@ -8,3 +8,9 @@ export function _signIn(params) {
     params: params
   });
 }
+
+export function _signUp(params) {
+  return axios.get(config.api + config.auth.signUp, {
+    params: params
+  });
+}

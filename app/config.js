@@ -2,7 +2,8 @@ export default function () {
     let config = {
         api: '',
         auth: {
-            signIn : '/user'
+            signIn : '/user',
+            signUp : '/user'
         },
         users: {
             userList : '/users',

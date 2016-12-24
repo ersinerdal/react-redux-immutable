@@ -1,5 +1,5 @@
 import {REQUEST_SIGN_UP,RECEIVE_SIGN_UP,ERROR_SIGN_UP} from './types';
-import {_signIn} from '../api';
+import {_signUp} from '../../api';
 import { browserHistory } from 'react-router'
 
 
@@ -21,10 +21,10 @@ const receiveSignUp = (user) => {
   }
 };
 
-export const signUp = (username, password) => {
+export const signUp = (first_name, last_name, email, password) => {
   return dispatch => {
     dispatch(requestSignUp());
-    return _signIn({username, password}).then(function (response) {
+    return _signUp({first_name, last_name, email, password}).then(function (response) {
       sessionStorage.setItem('user',JSON.stringify(response.data));
       dispatch(receiveSignUp(response.data));
       browserHistory.push('/');
