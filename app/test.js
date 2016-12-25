@@ -8,12 +8,12 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import sinon from 'sinon';
 import * as router from 'react-router';
-
 import React from 'react';
-import Enzyme from 'enzyme';
+import { mount,render,shallow } from 'enzyme';
 import chaiEnzyme from 'chai-enzyme';
+import jsdom from 'jsdom'
 
-chai.use(chaiEnzyme())
+chai.use(chaiEnzyme());
 chai.use(chaiImmutable);
 chai.use(sinonChai);
 
@@ -45,8 +45,20 @@ global.localStorage = storageMock();
 global.mockStore = configureMockStore([thunk]);
 global.config = new Config();
 global.mock = new MockAdapter(axios);
-global.Enzyme = Enzyme;
+global.mount = mount;
+global.render = render;
+global.shallow = shallow;
 global.React = React;
+global.router = router;
+global.sinon = sinon;
+
+const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
+global.document = doc;
+global.window = doc.defaultView;
+
+global.navigator = {
+  userAgent: 'node.js'
+};
 
 router.browserHistory = { push: ()=>{} };
 const browserHistoryPushStub = sinon.stub(router.browserHistory, 'push', () => { });

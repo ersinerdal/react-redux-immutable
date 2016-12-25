@@ -10,7 +10,7 @@
     "build_win": "SET NODE_ENV=production&& webpack --progress --colors",
     "api": "json-server --watch db.json --port 3000 &",
     "mock": "npm start && npm run api",
-    "test": "cross-env NODE_ENV=test&& mocha --reporter spec app/**/*.spec.js --compilers js:babel-register --recursive --require ./app/test.js",
+    "test": "cross-env NODE_ENV=test mocha --reporter spec app/**/*.spec.js --compilers js:babel-register --recursive --require ./app/test.js",
     "test-watch": "npm run test -- --watch --watch-extensions js"
   },
   "author": "",
@@ -51,7 +51,7 @@
     "eslint-plugin-react": "^5.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.21.0",
-    "jsdom": "^9.6.0",
+    "jsdom": "^9.9.1",
     "json-server": "^0.8.14",
     "mocha": "^2.5.3",
     "postcss-cssnext": "^2.6.0",

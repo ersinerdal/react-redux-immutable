@@ -20,11 +20,11 @@ const receiveSignIn = (user) => {
   }
 };
 
-export const signIn = (username, password) => {
+export const signIn = (params) => {
   return dispatch => {
     dispatch(requestSignIn());
 
-    return _signIn({username, password}).then(function (response) {
+    return _signIn(params).then(function (response) {
       sessionStorage.setItem('user',JSON.stringify(response.data));
       dispatch(receiveSignIn(response.data));
       browserHistory.push('/');

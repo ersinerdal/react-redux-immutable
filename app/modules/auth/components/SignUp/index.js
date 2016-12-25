@@ -12,8 +12,13 @@ class SignUp extends Component {
   handleSubmit(e){
     e.preventDefault();
     const {first_name, last_name, email, password} = this.refs;
-    const {dispatch} = this.props;
-    dispatch(signUp(first_name.value, last_name.value ,email.value , password.value));
+    const formValues = {
+      first_name:first_name.value,
+      last_name:last_name.value,
+      email:email.value,
+      password:password.value
+    }
+    this.props.handleSubmit(formValues);
   }
   render() {
     const {resetForm, submitting} = this.props;
@@ -21,7 +26,7 @@ class SignUp extends Component {
     <Row>
       <Col s={10} m={6} l={4} offset='l4 m3 s1'>
         <Card className='lighten-4 black-text' title='Sign Up'>
-          <form id="signInForm" name="signInForm" onSubmit={::this.handleSubmit}>
+          <form id="signUpForm" name="signUpForm" onSubmit={::this.handleSubmit}>
             <Row>
               <Input ref="first_name" s={12} type="text" id="first_name" label="First Name" validate></Input>
               <Input ref="last_name" s={12} type="text" id="last_name" label="Last Name" validate></Input>
@@ -51,9 +56,16 @@ SignUp.propTypes = {
 SignUp.defaultProps ={
   submitting:false
 };
-
-function mapStateToProps(state) {
+const mapDispatchToProps =  (dispatch) => {
+  return {
+    handleSubmit: function (params) {
+      dispatch(signUp(params));
+    }
+  }
+}
+const mapStateToProps= (state) => {
   const {SignUp} =  state.toJS();
   return SignUp;
 }
-export default connect(mapStateToProps)(SignUp);
+export default connect(mapStateToProps,mapDispatchToProps)(SignUp);
+export { SignUp as plainComponent};

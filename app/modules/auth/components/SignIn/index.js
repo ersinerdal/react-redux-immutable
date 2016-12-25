@@ -12,8 +12,11 @@ class SignIn extends Component {
   handleSubmit(e){
     e.preventDefault();
     const {email, password} = this.refs;
-    const {dispatch} = this.props;
-    dispatch(signIn(email.value, password.value));
+    const formValues = {
+      email:email.value,
+      password:password.value
+    }
+    this.props.handleSubmit(formValues);
   }
 
   render() {
@@ -49,9 +52,17 @@ SignIn.defaultProps ={
   submitting:false
 };
 
-
-function mapStateToProps(state) {
+const mapDispatchToProps =  (dispatch) => {
+  return {
+    handleSubmit: function (params) {
+      dispatch(signIn(params));
+    }
+  }
+}
+const mapStateToProps =  (state) => {
   const {SignIn} =  state.toJS();
   return SignIn;
 }
-export default connect(mapStateToProps)(SignIn);
+export default connect(mapStateToProps,mapDispatchToProps)(SignIn);
+export { SignIn as plainComponent};
+

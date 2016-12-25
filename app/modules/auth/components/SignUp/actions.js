@@ -21,10 +21,10 @@ const receiveSignUp = (user) => {
   }
 };
 
-export const signUp = (first_name, last_name, email, password) => {
+export const signUp = (params) => {
   return dispatch => {
-    dispatch(requestSignUp());
-    return _signUp({first_name, last_name, email, password}).then(function (response) {
+    dispatch(requestSignUp(params));
+    return _signUp().then(function (response) {
       sessionStorage.setItem('user',JSON.stringify(response.data));
       dispatch(receiveSignUp(response.data));
       browserHistory.push('/');
