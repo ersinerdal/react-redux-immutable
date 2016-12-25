@@ -19,12 +19,7 @@ describe('SignIn actions', () => {
       {type: 'REQUEST_SIGN_IN'},
       {
         type: 'RECEIVE_SIGN_IN',
-        user: {
-          id: 1,
-          name: 'username',
-          surname: 'testsurname',
-          token: 'testtokentokentokentokentokentokentoken'
-        }
+        user: expectedUser
       }];
 
 

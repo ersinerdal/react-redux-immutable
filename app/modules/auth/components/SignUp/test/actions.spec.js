@@ -19,12 +19,7 @@ describe('SignUp actions', () => {
       {type: 'REQUEST_SIGN_UP'},
       {
         type: 'RECEIVE_SIGN_UP',
-        user: {
-          id: 1,
-          name: 'username',
-          surname: 'testsurname',
-          token: 'testtokentokentokentokentokentokentoken'
-        }
+        user: expectedUser
       }];
 
     mock.onGet(config.api + config.auth.signUp).reply(200, expectedUser);
