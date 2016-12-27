@@ -1,7 +1,7 @@
 # README #
 
 
-### Yet another react boilerplate, easy to setup and scalable. ###
+### Yet another react boilerplate, easy to setup and scalable with domain driven design ###
 ### Next Generation javascript and css ###
 
 * <a href='https://facebook.github.io/react/'>React</a>
