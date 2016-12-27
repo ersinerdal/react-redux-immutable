@@ -16,8 +16,8 @@
 * <a href='http://chaijs.com/'>Chai</a>
 
 
-
-* v1.3
+### Version ###
+1.3
 
 ### Quick Start ###
 
