@@ -4,21 +4,27 @@
 ### Yet another react boilerplate, easy to setup and scalable. ###
 ### Next Generation javascript and css ###
 
-* React
-* Redux
-* Immutable
-* post-css
-* materialize-css
-* webpack
+* <a href='https://facebook.github.io/react/'>React</a>
+* <a href='http://redux.js.org/'>Redux</a>
+* <a href='https://facebook.github.io/immutable-js/'>Immutable</a>
+* <a href='http://postcss.org/'>post-css</a>
+* <a href='https://react-materialize.github.io/'>react-materialize</a>
+* <a href='https://webpack.github.io/'>webpack</a>
+* <a href='https://github.com/typicode/json-server'>json-server</a>
+* <a href='http://airbnb.io/enzyme/'>Enzyme</a>
+* <a href='https://mochajs.org/'>Mocha</a>
+* <a href='http://chaijs.com/'>Chai</a>
 
-* v1.0
+
+
+* v1.3
 
 ### Quick Start ###
 
 * npm install
 * npm run mock 
-* mock data server (json-server) runs on http://localhost:3000.
-* the app runs on http://localhost:8081.
+* Mock data server (json-server) runs on http://localhost:3000.
+* The app runs on http://localhost:8081.
 
 ### Contribution guidelines ###
 * Writing tests
