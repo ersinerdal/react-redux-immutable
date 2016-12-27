@@ -1,22 +1,28 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### Yet another react boilerplate? ###
+### Yet another react boilerplate, easy to setup and scalable. ###
+### Next Generation javascript and css ###
 
-* Domain Driven Design
-* 1.0
+* React
+* Redux
+* Immutable
+* post-css
+* materialize-css
+* webpack
 
-### How do I get set up? ###
+* v1.0
+
+### Quick Start ###
 
 * npm install
 * npm run mock 
+* mock data server (json-server) runs on http://localhost:3000.
+* the app runs on http://localhost:8081.
 
 ### Contribution guidelines ###
-
 * Writing tests
 * Code review
 
 ### Who do I talk to? ###
-
 * Ersin Erdal
