@@ -16,19 +16,24 @@
 * <a href='http://chaijs.com/'>Chai</a>
 
 
-### Version ###
+## Version
 1.3
 
-### Quick Start ###
+## Quick Start
 
 * npm install
 * npm run mock 
 * Mock data server (json-server) runs on http://localhost:3000.
 * The app runs on http://localhost:8081.
 
-### Contribution guidelines ###
+## Contribution guidelines
 * Writing tests
 * Code review
 
-### Who do I talk to? ###
+## Who do I talk to?
 * Ersin Erdal
+
+
+## License
+
+This project is licensed under the MIT license, Copyright (c) 2016 Ersin Erdal. For more information see `LICENSE.md`.
