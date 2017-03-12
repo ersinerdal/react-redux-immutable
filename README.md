@@ -7,7 +7,6 @@
 * <a href='https://facebook.github.io/react/'>React</a>
 * <a href='http://redux.js.org/'>Redux</a>
 * <a href='https://facebook.github.io/immutable-js/'>Immutable</a>
-* <a href='http://postcss.org/'>post-css</a>
 * <a href='https://react-materialize.github.io/'>react-materialize</a>
 * <a href='https://webpack.github.io/'>webpack</a>
 * <a href='https://github.com/typicode/json-server'>json-server</a>

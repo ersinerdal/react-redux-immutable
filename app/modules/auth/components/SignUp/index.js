@@ -3,8 +3,6 @@ import {connect} from 'react-redux'
 import {Input, Button, Col,Row, Icon, Card} from 'react-materialize';
 import {signUp} from './actions';
 
-import style from './styles.css';
-
 class SignUp extends Component {
   constructor(props) {
     super(props);
